@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    // 自分自身のデータか
+    function isUserAuthenticated(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    match /btc_accounts/{uid} {
+      allow read: if isUserAuthenticated(uid);
+    }
+
+    match /eth_accounts/{uid} {
+      allow read: if isUserAuthenticated(uid);
+    }
+
+    match /balances/{uid} {
+      allow read: if isUserAuthenticated(uid);
+      match /states/{assetType} {
+        allow read: if isUserAuthenticated(uid);
+      }
+      match /transactions/{txid} {
+        allow read: if isUserAuthenticated(uid);
+      }
+    }
+    match /pending_balances/{uid} {
+      allow read: if isUserAuthenticated(uid);
+    }
+    match /price_histories/{history_id} {
+      allow read: if true;
+    }
+    match /interest_payment_histories/{uid} {
+      allow read: if isUserAuthenticated(uid);
+      match /histories/{assetType} {
+        allow read: if isUserAuthenticated(uid);
+      }
+    }
+    match /convert_history/{uid} {
+      allow read: if isUserAuthenticated(uid);
+      match /history/{assetType} {
+        allow read: if isUserAuthenticated(uid);
+      }
+    }
+
+    match /usds_transactions/{txId} {
+      allow read: if isAuthenticated();
+    }
+
+    match /btc_transactions/{txId} {
+      allow read: if isAuthenticated();
+    }
+
+    match /withdrawal_requests/{txId} {
+      allow read: if isAuthenticated();
+    }
+
+    match /conversion_fee_rate/{rateType} {
+      allow read: if isAuthenticated();
+    }
+  }
+}

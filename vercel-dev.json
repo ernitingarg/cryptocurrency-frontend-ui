@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "CF_HOST": "https://us-central1-black-stream-292507.cloudfunctions.net",
+      "FIREBASE_ENV": "develop"
+    }
+  },
+  "alias": "soteria-team",
+  "name": "soteria-team",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

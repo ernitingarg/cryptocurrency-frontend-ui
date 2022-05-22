@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "CF_HOST": "https://us-central1-soteria-production.cloudfunctions.net",
+      "FIREBASE_ENV": "production"
+    }
+  },
+  "alias": "soteria-production",
+  "name": "soteria-production",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

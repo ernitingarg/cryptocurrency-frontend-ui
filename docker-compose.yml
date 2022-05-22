@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ./
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/workdir
+    environment:
+      FIREBASE_ENV: develop
+      CF_HOST: https://us-central1-black-stream-292507.cloudfunctions.net
+    extra_hosts:
+      - host.docker.internal:host-gateway

@@ -1,0 +1,96 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.watcherExclude": {
+    "**/.rvm/**": true,
+    "**/node_modules/**": true,
+    "/.git": true,
+    "/.DS_Store": true,
+    "/node_modules": true,
+    "**/*.js": true,
+    "**/Library/**": true,
+    "**/GoogleDrive/**": true,
+    "**/Dropbox/**": true,
+    "**/.cocoapods/**": true,
+    "**/Pictures/**": true,
+    "**/*.jsx": true,
+    "**/compiled/**": true,
+    "**/dist/**": true,
+    "**/.next/**": true,
+  },
+  "files.useExperimentalFileWatcher": true,
+  "files.exclude": {
+    "/.git": true,
+    "/.DS_Store": true,
+    "/node_modules": true,
+    "**/node_modules/**": true,
+    "**/Library/**": true,
+    "**/GoogleDrive/**": true,
+    "**/Dropbox/**": true,
+    "**/.cocoapods/**": true,
+    "**/Pictures/**": true,
+    "**/*.jsx": true,
+    "**/compiled/**": true,
+  },
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/Library/**": true,
+    "**/GoogleDrive/**": true,
+    "**/Dropbox/**": true,
+    "**/.cocoapods/**": true,
+    "**/Pictures/**": true,
+    "**/*.jsx": true,
+    "**/compiled/**": true,
+  },
+  "files.insertFinalNewline": true,
+  "javascript.format.enable": false,
+  // for .ts
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  // for .tsx
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  // for .json with comment
+  "[jsonc]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
+  },
+  "workbench.editor.enablePreview": false,
+  "typescript.tsc.autoDetect": "off",
+  "grunt.autoDetect": "off",
+  "gulp.autoDetect": "off",
+  "jake.autoDetect": "off",
+  "npm.autoDetect": "off",
+  "eslint.alwaysShowStatus": true,
+  "importCost.debug": true,
+  "importCost.timeout": 100000,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.options": {
+    "rules": {
+      "jsdoc/require-jsdoc": "off"
+    }
+  },
+  // 自動でeslintに違反したルールのurlを開くことを止めるため
+  "eslint.codeAction.showDocumentation": {
+    "enable": false
+  },
+  "deno.enable": false
+}
